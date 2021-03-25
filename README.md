@@ -1,4 +1,4 @@
-# Architectire-Vaccination-portal
+# Architecture-Vaccination-Portal
 
 
 A refernce AWS architecture to design  COVID-19 Vaccination portal.
