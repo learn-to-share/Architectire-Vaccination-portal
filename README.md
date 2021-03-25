@@ -34,26 +34,18 @@ A refernce AWS architecture to design  COVID-19 Vaccination portal.
 --> Any RDS DB is required to store the user information and vaccination records persistently. RDS Mysql or Aurora can be considered with one Standby for DR scenario.
 
 --> 2 Separate tables recommened. 1 for storing user details and schedule. 2d for storing clinic etc details.
+
 DB Schema:
+
  **User Table**:
- NRIC/ID(PK)  String
- Name     String
- Phone    Number
- DOB      String
- Address  String
- Scheduled_Date String
- Scheduled_Clinic String
- Scheduled_time   String
+ 
+ ![image](https://user-images.githubusercontent.com/39849388/112439619-4fdcc500-8d84-11eb-8a70-a7441dff6687.png)
+
  
  **Cert_record Table:**
- NRIC/ID(PK)  String
- Name     String
- DOB       String
- Dose1_Date String
- Dose1_Batch String
- Dose2_Date String
- Dose2_Batch String
- Clinic     String
+
+![image](https://user-images.githubusercontent.com/39849388/112439730-70a51a80-8d84-11eb-9ef0-ae5651922c00.png)
+
  
  --> SNS topic is required to send notification to users
 
@@ -74,7 +66,7 @@ DB Schema:
 
 1. Users will access web portal and the request will be sent to DNS via Route 53. Route 53 will forward the request to ELB.
 
-2. ELB will do SSL Termination on it and will forward the request EC2 instances.
+2. ELB will do SSL Termination on it and will forward the request to EC2 instances.
 
 3. EC2 instances will process the request and send the data to DB
 
